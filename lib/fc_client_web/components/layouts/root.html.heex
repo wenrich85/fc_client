@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" class="[scrollbar-gutter:stable]">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="csrf-token" content={get_csrf_token()} />
+    <.live_title suffix=" · Phoenix Framework">
+      <%= assigns[:page_title] || "FcClient" %>
+    </.live_title>
+    <link phx-track-static rel="stylesheet" href={~p"/assets/app.css"} />
+    <script defer phx-track-static type="text/javascript" src={~p"/assets/app.js"}>
+    </script>
+  </head>
+  <body class="bg-white antialiased">
+  <nav class="bg-blue-500 p-4">
+    <div class="container mx-auto flex justify-between items-center">
+        <!-- Logo -->
+        <a href="/" class="text-white text-xl font-semibold">FC LOGO</a>
+
+        <!-- Collapsible Menu Button -->
+        <button id="menuBtn" class="lg:hidden text-white text-2xl">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </button>
+
+        <!-- Collapsible Menu -->
+        <ul id="menuItems" class="hidden lg:flex space-x-4">
+            <li><a href="/" class="text-white hover:text-gray-300">Home</a></li>
+            <li><a href="/about" class="text-white hover:text-gray-300">About</a></li>
+            <li><a href="/services" class="text-white hover:text-gray-300">Services</a></li>
+            <li><a href="/contact" class="text-white hover:text-gray-300">Contact</a></li>
+        </ul>
+    </div>
+</nav>
+<%= @inner_content %>
+<script>
+    // JavaScript to toggle the menu on small screens
+    const menuBtn = document.getElementById('menuBtn');
+    const menuItems = document.getElementById('menuItems');
+
+    menuBtn.addEventListener('click', () => {
+        menuItems.classList.toggle('hidden');
+    });
+</script>
+    
+  </body>
+</html>
