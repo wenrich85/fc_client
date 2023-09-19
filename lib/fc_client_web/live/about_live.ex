@@ -8,7 +8,7 @@ defmodule FcClientWeb.AboutLive do
   def render(assigns) do
     ~H"""
       <div>
-        This is our About Page Bitch
+        This is our About Page.
       </div>
     """
   end

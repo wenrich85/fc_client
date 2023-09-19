@@ -1,0 +1,20 @@
+name: Deployment Workflow
+on:
+  push:
+    branches: [ main ]
+
+jobs: 
+  job_one:
+    name: Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: runnung SSH Commans on feliciascleaners.com
+      uses: appleboy/ssh-action@master
+      with:
+        host: im2fat.com
+        username: wenrich85
+        key: ${{ secrets.FC_CLIENT_SECRET }}
+        port: 22
+        script: |
+          export PATH=~/.asdf/shims/:$PATH
+          ./deploy.sh fc_client
