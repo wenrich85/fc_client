@@ -1,4 +1,5 @@
 defmodule FcClientWeb do
+
   @moduledoc """
   The entrypoint for defining your web interface, such
   as controllers, components, channels, and so on.
@@ -21,7 +22,7 @@ defmodule FcClientWeb do
 
   def router do
     quote do
-      use Phoenix.Router, helpers: false
+      use Phoenix.Router, helpers: true
 
       # Import common connection and controller functions to use in pipelines
       import Plug.Conn
@@ -55,6 +56,7 @@ defmodule FcClientWeb do
         layout: {FcClientWeb.Layouts, :app}
 
       unquote(html_helpers())
+      import FcClientWeb.LiveHelpers
     end
   end
 

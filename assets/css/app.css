@@ -3,3 +3,30 @@
 @import "tailwindcss/utilities";
 
 /* This file is for your main application CSS */
+.sunday {
+    grid-column-start: 7;
+}
+
+.monday {
+    grid-column-start: 1;
+}
+
+.tuesday {
+    grid-column-start: 2;
+}
+
+.wednesday {
+    grid-column-start: 3;
+}
+
+.thursday {
+    grid-column-start: 4;
+}
+
+.friday {
+    grid-column-start: 5;
+}
+
+.saturday {
+    grid-column-start: 6;
+}
