@@ -53,7 +53,8 @@ defmodule FcClient.MixProject do
       {:plug_cowboy, "~> 2.5"},
       {:bookme, git: "https://github.com/wenrich85/Bookme"},
       {:ecto_enum, "~> 1.4"},
-      {:cleaning_business_model, git: "https://github.com/wenrich85/cleaning_business_model"}
+      {:cleaning_business_model, git: "https://github.com/wenrich85/cleaning_business_model"},
+      {:cowlib, ">=2.12.1"}
     ]
   end
 
