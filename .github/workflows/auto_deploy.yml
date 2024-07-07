@@ -17,4 +17,4 @@ jobs:
         port: 22
         script: |
           export PATH=~/.asdf/shims/:$PATH
-          ./deploy.sh fc_client
+          ./fc_deploy.sh 
