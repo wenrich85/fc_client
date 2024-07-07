@@ -1,8 +1,9 @@
 %{
   "bcrypt_elixir": {:hex, :bcrypt_elixir, "3.1.0", "0b110a9a6c619b19a7f73fa3004aa11d6e719a67e672d1633dc36b6b2290a0f7", [:make, :mix], [{:comeonin, "~> 5.3", [hex: :comeonin, repo: "hexpm", optional: false]}, {:elixir_make, "~> 0.6", [hex: :elixir_make, repo: "hexpm", optional: false]}], "hexpm", "2ad2acb5a8bc049e8d5aa267802631912bb80d5f4110a178ae7999e69dca1bf7"},
-  "bookme": {:git, "https://github.com/wenrich85/Bookme", "d9dd2d3059e1efca0e59b93f4609e28a5583404a", []},
+  "bookme": {:git, "https://github.com/wenrich85/Bookme", "9dfc7885f690d37452808822bf7ef58f9e7ea12c", []},
   "castore": {:hex, :castore, "1.0.3", "7130ba6d24c8424014194676d608cb989f62ef8039efd50ff4b3f33286d06db8", [:mix], [], "hexpm", "680ab01ef5d15b161ed6a95449fac5c6b8f60055677a8e79acf01b27baa4390b"},
   "certifi": {:hex, :certifi, "2.12.0", "2d1cca2ec95f59643862af91f001478c9863c2ac9cb6e2f89780bfd8de987329", [:rebar3], [], "hexpm", "ee68d85df22e554040cdb4be100f33873ac6051387baf6a8f6ce82272340ff1c"},
+  "cleaning_business_model": {:git, "https://github.com/wenrich85/cleaning_business_model", "bc4944e4667011d91a9cc5622b8657f825ce6131", []},
   "combine": {:hex, :combine, "0.10.0", "eff8224eeb56498a2af13011d142c5e7997a80c8f5b97c499f84c841032e429f", [:mix], [], "hexpm", "1b1dbc1790073076580d0d1d64e42eae2366583e7aecd455d1215b0d16f2451b"},
   "comeonin": {:hex, :comeonin, "5.4.0", "246a56ca3f41d404380fc6465650ddaa532c7f98be4bda1b4656b3a37cc13abe", [:mix], [], "hexpm", "796393a9e50d01999d56b7b8420ab0481a7538d0caf80919da493b4a6e51faf1"},
   "cowboy": {:hex, :cowboy, "2.10.0", "ff9ffeff91dae4ae270dd975642997afe2a1179d94b1887863e43f681a203e26", [:make, :rebar3], [{:cowlib, "2.12.1", [hex: :cowlib, repo: "hexpm", optional: false]}, {:ranch, "1.8.0", [hex: :ranch, repo: "hexpm", optional: false]}], "hexpm", "3afdccb7183cc6f143cb14d3cf51fa00e53db9ec80cdcd525482f5e99bc41d6b"},

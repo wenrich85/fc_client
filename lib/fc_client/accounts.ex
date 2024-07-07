@@ -14,6 +14,13 @@ defmodule FcClient.Accounts do
     |> Repo.insert()
   end
 
+  def change_user_role(%User{}=user, attrs) do
+    user
+    |> User.admin_registration_changeset(attrs)
+    |> Repo.update()
+  end
+
+
   ## Database getters
 
   @doc """

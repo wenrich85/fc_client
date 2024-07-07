@@ -2,31 +2,86 @@
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
 
+form {
+  box-shadow: 0 1px 3px hsla(0, 0%, 0%, .2);
+  padding: 15px;
+  border-radius: 5%;
+}
+
+.service-card {
+  width: 25%;
+  height: 350px;
+  background-color: hsl(240, 50%, 100%);
+  box-shadow: 1px 4px 10px hsla(0, 0%, 17%, 0.6);
+  padding: 15px;
+  border-radius: 10%;
+}
 /* This file is for your main application CSS */
 .sunday {
-    grid-column-start: 7;
+  grid-column-start: 7;
 }
 
 .monday {
-    grid-column-start: 1;
+  grid-column-start: 1;
 }
 
 .tuesday {
-    grid-column-start: 2;
+  grid-column-start: 2;
 }
 
 .wednesday {
-    grid-column-start: 3;
+  grid-column-start: 3;
 }
 
 .thursday {
-    grid-column-start: 4;
+  grid-column-start: 4;
 }
 
 .friday {
-    grid-column-start: 5;
+  grid-column-start: 5;
 }
 
 .saturday {
-    grid-column-start: 6;
+  grid-column-start: 6;
+}
+/* Custom styling for the glowing circle */
+.glowing-circle {
+  width: 15px;
+  height: 15px;
+  background-color: #4caf50; /* Green color */
+  border-radius: 50%; /* Make it a circle */
+  box-shadow: 0 0 10px #4caf50, 0 0 20px #4caf50, 0 0 30px #4caf50; /* Glowing effect */
+  animation: glowing 1.5s infinite; /* Animation for the glowing effect */
+}
+.red-circle {
+    width: 15px;
+    height: 15px;
+    background-color: #FF0000; /* Red color */
+    border-radius: 50%; /* Make it a circle */
+    box-shadow: 0 0 10px #FF0000, 0 0 20px #FF0000, 0 0 30px #FF0000; /* Glowing effect */
+    animation: red-glowing 1.5s infinite; /* Animation for the glowing effect */
+  }
+
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 10px #4caf50, 0 0 20px #4caf50, 0 0 30px #4caf50;
+  }
+  50% {
+    box-shadow: 0 0 20px #4caf50, 0 0 30px #4caf50, 0 0 40px #4caf50;
+  }
+  100% {
+    box-shadow: 0 0 10px #4caf50, 0 0 20px #4caf50, 0 0 30px #4caf50;
+  }
+  
+}
+@keyframes red-glowing {
+    0% {
+      box-shadow: 0 0 10px #FF0000, 0 0 20px #FF0000, 0 0 30px #FF0000;
+    }
+    50% {
+      box-shadow: 0 0 20px #FF0000, 0 0 30px #FF0000, 0 0 40px #FF0000;
+    }
+    100% {
+      box-shadow: 0 0 10px #FF0000, 0 0 20px #FF0000, 0 0 30px #FF0000;
+    }
 }

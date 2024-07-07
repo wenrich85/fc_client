@@ -3,7 +3,6 @@ defmodule FcClientWeb.EnsureRolePlug do
   alias FcClient.Accounts
   alias FcClient.Accounts.User
   alias Phoenix.Controller
-  alias Plug.Conn
 
   def init(config), do: config
 

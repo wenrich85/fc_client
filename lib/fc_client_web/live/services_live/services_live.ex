@@ -10,9 +10,13 @@ defmodule FcClientWeb.ServicesLive do
 
   def render(assigns) do
     ~H"""
+      <div class="service-card">
+       <p> Service cards with price </p>
+      </div>
       <div>
-        List of services. with tabs for each or columns with comparison depends on screen size
+       <p class="service-list"> List of Services </p>
       </div>
     """
   end
+
 end

@@ -13,6 +13,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      maxWidth: {
+        '3/4': '75%'
+      },
       colors: {
         brand: "#FD4F00",
       }

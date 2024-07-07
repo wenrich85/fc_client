@@ -13,7 +13,7 @@ defmodule FcClientWeb.BookingLive do
   end
 
   def handle_params(unsigned_params, _uri, socket) do
-    {:noreply, maybe_start_schedule(parse_name_params(unsigned_params["name"]), socket)}
+    {:noreply, maybe_start_schedule(unsigned_params["name"], socket)}
   end
 
   def render(assigns) do
@@ -31,8 +31,8 @@ defmodule FcClientWeb.BookingLive do
         <div class="md:col-span-1">
                 <!-- Sidebar or Mini-Calendar -->
                 <div class="bg-gray-100 p-4 rounded-lg">
-                    <h2 class="text-lg font-semibold">Calendar</h2>
-                    <.calendar />
+                    <h2 class="text-lg font-semibold text-center"><%= month_year(@date) %></h2>
+                    <.calendar date={ @date } />
                         <%= if Bookme.schedule_created?(assigns.custodian, ~N[2023-11-12 08:00:00.000] ) do %>
                         <div class="grid grid-cols-3">
                         <%= for time <- Bookme.show_appointment_times("Felicia", %{start_time: ~N[2023-11-12 08:00:00.000], duration: 120}) do %>
@@ -47,10 +47,11 @@ defmodule FcClientWeb.BookingLive do
                 <div class="mb-4">
                 <button class="bg-indigo-600 p-2 rounded font-bold text-white" phx-click="start_calendar">Start <%= assigns.custodian %>'s Calendar</button>
                     <div class="flex justify-between items-center">
-                        <h2 class="text-lg font-semibold">Today: <%= format_date(@date) %></h2>
+                        <h2 class="text-lg font-semibold">Date: <%= format_date(@date) %></h2>
                         <button class="btn btn-primary bg-amber-500 p-2 rounded font-bold text-white">Add Appointment</button>
                     </div>
                 </div>
+
 
                 <!-- Calendar Events -->
                 <div class="space-y-4">
@@ -90,35 +91,45 @@ defmodule FcClientWeb.BookingLive do
 
   def handle_event("start_custodian", value, socket) do
     IO.inspect(value)
-    {:noreply, assign(socket, :custodian, value["value"])}
+    {:noreply,
+    socket
+  }
   end
 
   def handle_event("show_schedule", %{"value" => name}, socket) do
-    IO.puts("Recievied")
-    IO.inspect(name)
-    Bookme.start_schedule(name)
     {:noreply,
     socket
-    |> assign(:custodian, name)
+    |> push_patch( to: ~p"/booking/?name=#{create_name_params(name)}")
+
   }
+  end
+
+  def handle_event("previous_month", _value, socket) do
+    {:noreply,
+    socket
+    |> assign(date: get_previous_month(socket.assigns.date))
+    }
+  end
+  def handle_event("next_month", _value, socket) do
+    {:noreply,
+    socket
+    |> assign(date: get_next_month(socket.assigns.date))
+    }
   end
 
   defp format_time(date) do
     Timex.format!(date, "%H:%M", :strftime)
   end
 
-  defp check_for_schedule(name) do
-    Bookme.start_schedule("Felicia")
-    Bookme.list_schedule(name)
-    |> IO.inspect()
-  end
-
   defp format_date(date), do: Timex.format!(date, "%B %-d, %Y", :strftime)
+  defp maybe_start_schedule(nil, socket), do: socket
   defp maybe_start_schedule(name, socket) do
+    name = parse_name_params(name)
     Bookme.start_schedule(name)
     socket
     |> assign(:custodian, name)
   end
+
   defp parse_name_params(name) do
     name
     |> String.downcase()
@@ -127,5 +138,23 @@ defmodule FcClientWeb.BookingLive do
     |> Enum.map(&(String.capitalize(&1)))
     |> Enum.join(" ")
   end
+
+  defp create_name_params(name) do
+    name
+    |> String.downcase()
+    |> String.replace(" ", "_")
+  end
+  defp get_previous_month(date) do
+    date
+    |> Timex.beginning_of_month()
+    |> Timex.subtract(Timex.Duration.from_days(1))
+    |> Timex.beginning_of_month()
+  end
+  defp get_next_month(date) do
+    date
+    |> Timex.end_of_month()
+    |> Timex.add(Timex.Duration.from_days(1))
+  end
+  defp month_year(date), do: Timex.format!(date, "%B %Y", :strftime)
 
 end

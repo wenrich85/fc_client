@@ -1,4 +1,5 @@
 defmodule FcClientWeb.Router do
+  alias FcClientWeb.ServicesLive.ServiceBuilderLive
   alias FcClientWeb.BookingLive
   alias FcClientWeb.AccountManagerLive
   alias FcClientWeb.OwnerDashboardLive
@@ -52,6 +53,8 @@ defmodule FcClientWeb.Router do
     get "/admin", AdminController, :admin
     live "/admin_dashboard", OwnerDashboardLive, :index
     live "/account-manager", AccountManagerLive, :index
+    live "/account-manager#:tab", AccountManagerLive, :index
+    live "/service-builder", ServiceBuilderLive, :index
   end
 
   scope "/" do
