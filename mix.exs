@@ -5,7 +5,7 @@ defmodule FcClient.MixProject do
     [
       app: :fc_client,
       version: "0.1.0",
-      elixir: "~> 1.14",
+      elixir: "~> 1.15.2-otp-24",
       elixirc_paths: elixirc_paths(Mix.env()),
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
