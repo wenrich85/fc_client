@@ -81,7 +81,7 @@ defmodule FcClientWeb.BookingLive do
     {:noreply, assign(socket, :schedule, schedule)}
   end
 
-  def handle_event("show_date", %{"value" => date} = value, socket) do
+  def handle_event("show_date", %{"value" => date} = _value, socket) do
     {:ok, date} = Timex.parse(date, "{ISO:Extended}")
     {:noreply,
     socket
