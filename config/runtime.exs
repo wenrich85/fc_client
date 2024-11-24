@@ -63,8 +63,7 @@ if config_env() == :prod do
       "https://www.feliciascleaners.com",
       "http://www.feliciascleaners.com:#{port}",
       "http://feliciascleaners.com:#{port}"
-    ],
-    server: true
+    ]
 
   # ## SSL Support
   #
