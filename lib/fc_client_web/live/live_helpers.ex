@@ -18,7 +18,7 @@ defmodule FcClientWeb.LiveHelpers do
         _other ->
           socket
           |> put_flash(:error, "You must be logged in to access this page.")
-          |> redirect(to: Routes.user_session_path(socket, :new))
+
       end
   end
 
