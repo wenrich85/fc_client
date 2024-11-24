@@ -1,5 +1,5 @@
 defmodule FcClientWeb.AccountManagerLive.Components do
-  alias FcClient.Accounts
+  #alias FcClient.Accounts
   use FcClientWeb, :live_component
 
   def render(assigns) do
@@ -201,7 +201,7 @@ defmodule FcClientWeb.AccountManagerLive.Components do
 
   def schedule_form(assigns) do
     ~H"""
-      <.simple_form></.simple_form>
+      <%!-- <.simple_form></.simple_form> --%>
     """
   end
 end
