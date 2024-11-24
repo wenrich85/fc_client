@@ -13,6 +13,7 @@ defmodule FcClient.Accounts.User do
     ])
 
   schema "users" do
+    field :name, :string
     field :email, :string
     field :password, :string, virtual: true, redact: true
     field :hashed_password, :string, redact: true
