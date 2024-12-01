@@ -1,5 +1,4 @@
 defmodule FcClientWeb.Router do
-  alias FcClientWeb.Organization.OrganizationLive
   alias FcClientWeb.ServicesLive.ServiceBuilderLive
   alias FcClientWeb.BookingLive
   alias FcClientWeb.AccountManagerLive
