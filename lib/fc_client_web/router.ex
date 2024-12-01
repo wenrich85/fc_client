@@ -1,4 +1,5 @@
 defmodule FcClientWeb.Router do
+  alias FcClientWeb.Organization.OrganizationLive
   alias FcClientWeb.ServicesLive.ServiceBuilderLive
   alias FcClientWeb.BookingLive
   alias FcClientWeb.AccountManagerLive
@@ -55,6 +56,8 @@ defmodule FcClientWeb.Router do
     live "/account-manager", AccountManagerLive, :index
     live "/account-manager#:tab", AccountManagerLive, :index
     live "/service-builder", ServiceBuilderLive, :index
+    live "/organization", OrganizationLive
+
   end
 
   scope "/" do
@@ -67,6 +70,7 @@ defmodule FcClientWeb.Router do
     live "/user_dashboard", UserDashboardLive, :index
     live "/booking", BookingLive, :index
     live "/booking/:name", BookingLive, :booking
+
   end
 
   # Other scopes may use custom stacks.

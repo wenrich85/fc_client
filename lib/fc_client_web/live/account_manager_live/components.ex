@@ -49,16 +49,16 @@ defmodule FcClientWeb.AccountManagerLive.Components do
       </div>
     """
   end
-  def user_administration(assigns=%{roles: []}) do
-    ~H"""
-      <div class="p-4">
-        <div class="tab-content" id="tab1-content">
-            <!-- Customers Tab Content -->
-            <p>Select a tab mf </p>
-        </div>
-      </div>
-    """
-  end
+  # def user_administration(assigns=%{roles: []}) do
+  #   ~H"""
+  #     <div class="p-4">
+  #       <div class="tab-content" id="tab1-content">
+  #           <!-- Customers Tab Content -->
+  #           <p>Select a tab mf </p>
+  #       </div>
+  #     </div>
+  #   """
+  # end
   def user_administration(assigns=%{roles: [:admin]}) do
     ~H"""
       <div class="p-4">

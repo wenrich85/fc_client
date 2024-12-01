@@ -10,7 +10,12 @@ defmodule FcClientWeb.AdminLive do
     ~H"""
       <div>
         This is our Admin Page.
+
+        <canvas id="org" width={width()} height="500" class="border border-black" />
+
       </div>
     """
   end
+
+  defp width(), do: 1000
 end
