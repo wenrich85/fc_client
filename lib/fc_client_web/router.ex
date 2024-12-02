@@ -1,11 +1,6 @@
 defmodule FcClientWeb.Router do
-  alias FcClientWeb.Organization.OrganizationLive
-  alias FcClientWeb.ServicesLive.ServiceBuilderLive
   alias FcClientWeb.BookingLive
-  alias FcClientWeb.AccountManagerLive
-  alias FcClientWeb.OwnerDashboardLive
   alias FcClientWeb.UserDashboardLive
-  alias FcClientWeb.AdminController
   use FcClientWeb, :router
 
   import FcClientWeb.UserAuth
@@ -37,31 +32,31 @@ defmodule FcClientWeb.Router do
     plug :accepts, ["json"]
   end
 
-  scope "/" do
+  scope "/", FcClientWeb do
     pipe_through :browser
 
     get "/", PageController, :home
     get "/contact", ContactController, :contact
     get "/about", AboutController, :about
     get "/services", ServicesController, :services
-    live "/organization", OrganizationLive
+    # live "/organization", OrganizationLive
 
 
   end
 
-  scope "/" do
+  scope "/", FcClientWeb do
     pipe_through [:browser, :require_authenticated_user, :admin]
 
     get "/admin", AdminController, :admin
     live "/admin_dashboard", OwnerDashboardLive, :index
     live "/account-manager", AccountManagerLive, :index
     live "/account-manager#:tab", AccountManagerLive, :index
-    live "/service-builder", ServiceBuilderLive, :index
-    # live "/organization", OrganizationLive
+    live "/service-builder", ServicesLive.ServiceBuilderLive, :index
+    live "/organization", Organization.OrganizationLive
 
   end
 
-  scope "/" do
+  scope "/", FcClientWeb do
     pipe_through [:browser, :require_authenticated_user, :owner]
     live "/owner_dashboard", OwnerDashboardLive, :index
   end
