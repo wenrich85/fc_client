@@ -6,15 +6,16 @@ on:
 jobs: 
   job_one:
     name: Deploy
-    runs-on: ubuntu-latest
+    runs-on: debian-latest
     steps:
     - name: runnung SSH Commans on feliciascleaners.com
       uses: appleboy/ssh-action@master
       with:
-        host: im2fat.com
+        host: feliciascleaners.com
         username: wenrich85
         key: ${{ secrets.FC_CLIENT_SECRET }}
         port: 22
         script: |
-          export PATH=~/.asdf/shims/:$PATH
-          ./fc_deploy.sh 
+          cd fc_client
+          git pull origin master
+          git status
