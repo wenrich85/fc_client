@@ -12,7 +12,7 @@ jobs:
       uses: appleboy/ssh-action@master
       with:
         host: feliciascleaners.com
-        username: wenrich85
+        username: wrichards
         key: ${{ secrets.FC_CLIENT_SECRET }}
         port: 22
         script: |
