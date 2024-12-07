@@ -16,4 +16,4 @@ jobs:
         key: ${{ secrets.FC_CLIENT_SECRET }}
         port: 22
         script: |
-          deploy.sh
+          /bin/bash -c deploy.sh
