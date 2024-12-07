@@ -6,7 +6,7 @@ on:
 jobs: 
   job_one:
     name: Deploy
-    runs-on: debian
+    runs-on: linux
     steps:
     - name: runnung SSH Commans on feliciascleaners.com
       uses: appleboy/ssh-action@master
