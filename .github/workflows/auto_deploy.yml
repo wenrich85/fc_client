@@ -6,7 +6,7 @@ on:
 jobs: 
   job_one:
     name: Deploy
-    runs-on: linux
+    runs-on: ubuntu-latest
     steps:
     - name: runnung SSH Commans on feliciascleaners.com
       uses: appleboy/ssh-action@master
@@ -16,5 +16,4 @@ jobs:
         key: ${{ secrets.FC_CLIENT_SECRET }}
         port: 22
         script: |
-          export PATH=~/.asdf/shims/:$PATH
-          ./fc_deploy.sh 
+          whoami
