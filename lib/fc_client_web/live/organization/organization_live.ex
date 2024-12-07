@@ -79,6 +79,8 @@ defmodule FcClientWeb.Organization.OrganizationLive do
       |> assign(trigger_submit: false, check_errors: false, parents: get_parents_list(), positions: Organization.list_positions(), active_parent: active_parent)
       |> assign_form(changeset)
 
+      FcClient.Mailer.welcome()
+
     {:ok, socket, temporary_assigns: [form: nil]}
   end
 
