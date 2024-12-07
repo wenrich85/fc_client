@@ -16,6 +16,5 @@ jobs:
         key: ${{ secrets.FC_CLIENT_SECRET }}
         port: 22
         script: |
-          cd fc_client
-          git pull origin master
-          git status
+          export PATH=~/.asdf/shims/:$PATH
+          ./fc_deploy.sh 
