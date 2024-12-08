@@ -16,7 +16,9 @@ defmodule FcClientWeb.UserRegistrationLive do
           </.link>
           to your account now.
         </:subtitle>
+      <p> ENV= <%= System.get_env("SITE_KEY") %></p>
       </.header>
+
 
       <.simple_form
         for={@form}
@@ -31,11 +33,22 @@ defmodule FcClientWeb.UserRegistrationLive do
           Oops, something went wrong! Please check the errors below.
         </.error>
 
+        <.input field={@form[:name]} type="text" label="Name" required />
         <.input field={@form[:email]} type="email" label="Email" required />
         <.input field={@form[:password]} type="password" label="Password" required />
 
+        <%= raw CaptchaEx.Template.display(onload: "myOnLoadCallback") %>
+
+
         <:actions>
-          <.button phx-disable-with="Creating account..." class="w-full">Create an account</.button>
+          <.button
+            phx-disable-with="Creating account..."
+            class="w-fullg-recaptcha"
+            data-sitekey="6Ld7_5UqAAAAAMV9b4vSi-iLuqrXDZ35kE-p98U3"
+            data-callback='onSubmit'
+            data-action='submit'>
+              Create an account
+          </.button>
         </:actions>
       </.simple_form>
     </div>

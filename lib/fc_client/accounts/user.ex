@@ -60,7 +60,7 @@ defmodule FcClient.Accounts.User do
 
   def registration_changeset(user, attrs, opts \\ []) do
     user
-    |> cast(attrs, [:email, :password, :role])
+    |> cast(attrs, [:email, :password, :role, :name])
     |> validate_email(opts)
     |> validate_password(opts)
   end

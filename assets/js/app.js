@@ -39,50 +39,13 @@ liveSocket.connect()
 // >> liveSocket.disableLatencySim()
 window.liveSocket = liveSocket
 
-const org = document.getElementById("org")
-const ctx = org.getContext("2d")
-const radius = 50
-const dx = org.width
-const dy = org.height
-const offset = 0.2
-const center = org.height * .5
 
-console.log(dy*offset)
-console.log(dx/2)
-
-ctx.moveTo(dx/2, center)
-ctx.lineTo(dx/2, dy/4 )
-ctx.stroke()
-
-ctx.moveTo(dx/2, center)
-ctx.lineTo(dx/2, dy*.75 )
-ctx.stroke()
-
-// ctx.moveTo(dx/2, center)
-// ctx.lineTo(dx/2, dy*offset*2.7  )
-// ctx.stroke()
-
-// ctx.moveTo(dx/2, center)
-// ctx.lineTo(dx/3, dy/2  )
-// ctx.stroke()
-
-ctx.beginPath()
-ctx.arc(dx/2, center-5, radius, 0, 2*Math.PI)
-ctx.fillStyle="blue"
-ctx.fill()
-
-
-
-// const circ = createCircles(ctx, width/2, org.height * 0.1 + radius)
-// createCircles(ctx, width/5*2, org.height * .1 + radius)
-// createCircles(ctx, width/5*3, org.height * 0.1 + radius)
-// createCircles(ctx, width/5*4, org.height * 0.1 + radius)
-
-
-function createCircles(ctx, x, y, ) {
-    ctx.beginPath()
-    ctx.arc(x, y, radius, 0, 2*Math.PI)
-    ctx.fill()
-    
+function myOnLoadCallback() {
+    console.log("LOADED")
 }
+
+function onSubmit(token) {
+    alert("Captured")
+    document.getElementById("registration_for").submit();
+  }
 
