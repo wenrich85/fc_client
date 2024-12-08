@@ -39,6 +39,7 @@ liveSocket.connect()
 // >> liveSocket.disableLatencySim()
 window.liveSocket = liveSocket
 
+window.myOnLoadCallback = myOnLoadCallback;
 
 function myOnLoadCallback() {
     console.log("LOADED")
@@ -48,4 +49,5 @@ function onSubmit(token) {
     alert("Captured")
     document.getElementById("registration_for").submit();
   }
+
 

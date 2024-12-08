@@ -79,6 +79,6 @@ config :phoenix, :plug_init_mode, :runtime
 # Disable swoosh api client as it is only required for production adapters.
 config :swoosh, :api_client, false
 
-config :captcha_ex,
+config :recaptcha,
   public_key: System.get_env("SITE_KEY"),
   secret: System.get_env("SECRET_KEY")

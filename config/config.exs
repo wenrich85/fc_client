@@ -59,7 +59,7 @@ config :logger, :console,
 # Use Jason for JSON parsing in Phoenix
 config :phoenix, :json_library, Jason
 
-config :captcha_ex,
+config :recaptcha,
   public_key: System.get_env("SITE_KEY"),
   secret: System.get_env("SECRET_KEY")
 

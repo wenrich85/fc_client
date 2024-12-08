@@ -37,7 +37,7 @@ defmodule FcClientWeb.UserRegistrationLive do
         <.input field={@form[:email]} type="email" label="Email" required />
         <.input field={@form[:password]} type="password" label="Password" required />
 
-        <%= raw CaptchaEx.Template.display(onload: "myOnLoadCallback") %>
+        <%= raw Recaptcha.Template.display(onload: "myOnLoadCallback") %>
 
 
         <:actions>

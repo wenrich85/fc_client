@@ -19,7 +19,7 @@ defmodule FcClient.MixProject do
   def application do
     [
       mod: {FcClient.Application, []},
-      extra_applications: [:logger, :runtime_tools, :captcha_ex]
+      extra_applications: [:logger, :runtime_tools, :recaptcha]
     ]
   end
 
@@ -56,7 +56,7 @@ defmodule FcClient.MixProject do
       {:cleaning_business_model, git: "https://github.com/wenrich85/cleaning_business_model"},
       {:cowlib, ">=2.12.1"},
       {:phoenix_swoosh, "~> 1.0"},
-      {:captcha_ex, "~> 0.1"}
+      {:recaptcha, "~> 3.0"}
     ]
   end
 
