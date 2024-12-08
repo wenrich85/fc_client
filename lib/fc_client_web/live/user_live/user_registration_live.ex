@@ -16,7 +16,6 @@ defmodule FcClientWeb.UserRegistrationLive do
           </.link>
           to your account now.
         </:subtitle>
-      <p> ENV= <%= System.get_env("SITE_KEY") %></p>
       </.header>
 
 
