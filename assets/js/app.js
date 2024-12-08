@@ -40,6 +40,7 @@ liveSocket.connect()
 window.liveSocket = liveSocket
 
 window.myOnLoadCallback = myOnLoadCallback;
+window.onSubmit = onSubmit;
 
 function myOnLoadCallback() {
     console.log("LOADED")
