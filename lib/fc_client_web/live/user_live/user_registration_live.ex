@@ -39,6 +39,9 @@ defmodule FcClientWeb.UserRegistrationLive do
         <%= raw Recaptcha.Template.display(onload: "myOnLoadCallback") %>
         <%= raw Recaptcha.Template.display(noscript: true) %>
 
+        <div phx-hook="GoogleRecaptcha" id="captcha-placeholder" data-sitekey={System.get_env("SITE_KEY")}></div>
+
+
         <:actions>
           <.button
             phx-disable-with="Creating account..."
