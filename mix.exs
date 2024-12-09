@@ -56,7 +56,8 @@ defmodule FcClient.MixProject do
       {:cleaning_business_model, git: "https://github.com/wenrich85/cleaning_business_model"},
       {:cowlib, ">=2.12.1"},
       {:phoenix_swoosh, "~> 1.0"},
-      {:recaptcha, "~> 3.0"}
+      {:recaptcha, "~> 3.0"},
+      {:google_api_recaptcha_enterprise, "~> 0.10.0"}
     ]
   end
 

@@ -27,10 +27,17 @@ let Hooks = {}
 Hooks.GoogleRecaptcha = {
     mounted() {
         grecaptcha.render(this.el.id)
+    },
+    updated() {
+        grecaptcha.reset()
     }
 }
 
-
+Hooks.submitable = {
+    updated() {
+        alert("YOOOOO")
+    }
+}
 let csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content")
 let liveSocket = new LiveSocket("/live", Socket, {params: {_csrf_token: csrfToken}, hooks: Hooks})
 
@@ -49,6 +56,7 @@ liveSocket.connect()
 window.liveSocket = liveSocket
 
 window.myOnLoadCallback = myOnLoadCallback;
+window.SubmitEvent = onSubmit;
 
 function myOnLoadCallback() {
     console.log("LOADED")

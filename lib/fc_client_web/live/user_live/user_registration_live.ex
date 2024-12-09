@@ -37,15 +37,14 @@ defmodule FcClientWeb.UserRegistrationLive do
         <.input field={@form[:password]} type="password" label="Password" required />
 
         <%= raw Recaptcha.Template.display(onload: "myOnLoadCallback") %>
-        <%= raw Recaptcha.Template.display(noscript: true) %>
-
         <div phx-hook="GoogleRecaptcha" id="captcha-placeholder" data-sitekey={System.get_env("SITE_KEY")}></div>
+
 
 
         <:actions>
           <.button
             phx-disable-with="Creating account..."
-            class="w-fullg-recaptcha"
+            class="w-full "
             data-sitekey="6Ld7_5UqAAAAAMV9b4vSi-iLuqrXDZ35kE-p98U3"
             data-callback='onSubmit'
             data-action='submit'>
@@ -59,7 +58,6 @@ defmodule FcClientWeb.UserRegistrationLive do
 
   def mount(_params, _session, socket) do
     changeset = Accounts.change_user_registration(%User{})
-
     socket =
       socket
       |> assign(trigger_submit: false, check_errors: false)
