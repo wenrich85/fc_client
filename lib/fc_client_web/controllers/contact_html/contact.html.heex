@@ -1,63 +1,59 @@
-<!-- Contact Section -->
-    <section class="py-16 bg-white">
-        <div class="container mx-auto">
-            <h1 class="text-3xl font-semibold mb-8 text-center">Contact Us</h1>
-            <div class="md:flex md:space-x-8">
-                <!-- Contact Form -->
-                <div class="md:w-1/2">
-                    <form class="bg-gray-200 p-6 rounded-lg">
-                        <div class="mb-4">
-                            <label for="name" class="block text-gray-600">Name:</label>
-                            <input type="text" id="name" name="name" class="w-full border rounded-md py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500">
-                        </div>
-                        <div class="mb-4">
-                            <label for="email" class="block text-gray-600">Email:</label>
-                            <input type="email" id="email" name="email" class="w-full border rounded-md py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500">
-                        </div>
-                        <div class="mb-4">
-                            <label for="message" class="block text-gray-600">Message:</label>
-                            <textarea id="message" name="message" rows="4" class="w-full border rounded-md py-2 px-3 text-gray-700 focus:outline-none focus:border-blue-500"></textarea>
-                        </div>
-                        <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-full font-semibold transition duration-300">Send</button>
-                    </form>
-                </div>
-                <!-- Contact Information -->
-                <div class="md:w-1/2 mt-8 md:mt-0">
-                    <div class="bg-gray-200 p-6 rounded-lg">
-                        <h2 class="text-xl font-semibold mb-4">Contact Information</h2>
-                        <p class="text-gray-700 mb-2">Address: 123 Main Street, City, Zip Code</p>
-                        <p class="text-gray-700 mb-2">Phone: (123) 456-7890</p>
-                        <p class="text-gray-700">Email: info@cleaningco.com</p>
-                    </div>
-                </div>
-            </div>
+<!-- Header -->
+  <header class="bg-primary-600 text-white text-center py-6">
+    <h1 class="text-3xl font-bold">Contact Us</h1>
+    <p class="text-sm mt-2">We'd love to hear from you!</p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-10">
+    <div class="bg-white shadow-md rounded-lg p-8">
+      <h2 class="text-2xl font-semibold text-gray-700 mb-6">Get in Touch</h2>
+
+      <!-- Contact Form -->
+      <form action="#" method="POST" class="space-y-6">
+        <!-- Name -->
+        <div>
+          <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+          <input type="text" id="name" name="name" required class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500">
         </div>
-    </section>
 
-        <div class="container mx-auto">
-        <h2 class="text-2xl font-semibold mb-4">Appointment View</h2>
-        <div class="grid grid-cols-4 gap-2">
-            <div class="col-span-1 bg-gray-200 text-gray-600 p-2">Time</div>
-            <div class="col-span-3 bg-gray-200 text-gray-600 p-2">Appointments</div>
-
-            <!-- Generate 15-minute time slots -->
-            <!-- You can generate these time slots dynamically using a loop in a real application -->
-            <div class="col-span-1 border-r border-b border-gray-300">
-                <div class="border-b border-gray-300 p-2">00:00</div>
-                <div class="border-b border-gray-300 p-2">00:15</div>
-                <!-- Add more time slots here -->
-                <!-- ... -->
-                <div class="border-b border-gray-300 p-2">23:30</div>
-                <div class="p-2">23:45</div>
-            </div>
-
-            <!-- Appointments for each time slot -->
-            <div class="col-span-3 border-b border-gray-300">
-                <!-- You can display appointment details here for each time slot -->
-                <!-- Example: -->
-                <div class="p-2">08:00 - Meeting with Client</div> 
-                <!-- <div class="p-2">08:15 - Presentation</div> -->
-                <!-- ... -->
-            </div>
+        <!-- Email -->
+        <div>
+          <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+          <input type="email" id="email" name="email" required class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500">
         </div>
+
+        <!-- Message -->
+        <div>
+          <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+          <textarea id="message" name="message" rows="4" required class="w-full mt-2 px-4 py-2 border border-gray-300 rounded-md focus:ring-primary-500 focus:border-primary-500"></textarea>
+        </div>
+
+        <!-- Submit Button -->
+        <div>
+          <button type="submit" class="w-full bg-primary-600 text-white px-4 py-2 rounded-md hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500">
+            Send Message
+          </button>
+        </div>
+      </form>
     </div>
+
+    <!-- Contact Information -->
+    <div class="mt-10">
+      <h3 class="text-xl font-semibold text-gray-700">Our Contact Information</h3>
+      <p class="mt-2">Feel free call us using the number below:</p>
+      <ul class="mt-4 space-y-2">
+        <li><strong>Phone:</strong> (850) 628-5442</li>
+      </ul>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center py-4">
+    <p>&copy; <span id="year"></span> Felicia's Cleaners. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>

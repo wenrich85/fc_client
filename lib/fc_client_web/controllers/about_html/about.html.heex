@@ -1,3 +1,53 @@
-<div>
-    <%= live_render(@conn, FcClientWeb.AboutLive) %>
-</div>
+ <!-- Header -->
+  <header class="bg-primary-600 text-white text-center py-8">
+    <h1 class="text-4xl font-bold">About Us</h1>
+    <p class="text-lg mt-2">Experience, Innovation, and Dedication to Serve You Better</p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-10">
+    <!-- Introduction -->
+    <section class="bg-white shadow-md rounded-lg p-8 mb-10">
+      <h2 class="text-3xl font-semibold text-gray-700 mb-4">Meet Felicia</h2>
+      <p class="text-lg leading-relaxed text-gray-600">
+        With over 10 years of experience in the cleaning and service industry, Felicia has dedicated her career to helping people live easier, more organized lives. Her passion for delivering top-quality service shines in every home and business we serve. Whether it’s a one-time deep clean or ongoing regular services, Felicia and her team take pride in providing tailored solutions that exceed expectations.
+      </p>
+    </section>
+
+    <!-- How We Make Life Easier -->
+    <section class="bg-gray-50 shadow-md rounded-lg p-8 mb-10">
+      <h2 class="text-3xl font-semibold text-gray-700 mb-4">Making Your Life Easier</h2>
+      <p class="text-lg leading-relaxed text-gray-600">
+        We understand how busy life can get. That’s why we’re here to lighten your load by taking care of the cleaning. Imagine coming home to a spotless space where you can truly relax and focus on what matters most. Whether you need us for a one-time clean before a big event or a regular schedule to keep your home pristine, we’re here to help. Our team works around your needs to ensure every corner is cleaned with care and attention.
+      </p>
+    </section>
+
+    <!-- Innovation in Service -->
+    <section class="bg-white shadow-md rounded-lg p-8 mb-10">
+      <h2 class="text-3xl font-semibold text-gray-700 mb-4">Innovation in Cleaning Services</h2>
+      <p class="text-lg leading-relaxed text-gray-600">
+        We believe great service starts with modern solutions. That’s why we’ve integrated innovative IT processes into our operations, making booking, feedback, and reporting seamless and hassle-free for our clients. With our user-friendly platform, you can schedule services, submit feedback, or address any concerns in just a few clicks. We’re committed to ensuring your experience is as effortless and transparent as possible.
+      </p>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="bg-primary-600 text-white rounded-lg p-8 text-center">
+      <h2 class="text-3xl font-semibold">Let Us Make Your Life Easier</h2>
+      <p class="text-lg mt-4">
+        Ready to experience the difference? Book your cleaning service today and let us show you how effortless maintaining a clean home can be.
+      </p>
+      <a href="/contact" class="inline-block mt-6 bg-white text-primary-600 px-6 py-3 rounded-lg font-bold hover:bg-gray-200">
+        Get Started
+      </a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white text-center py-4">
+    <p>&copy; <span id="year"></span> Felicia's Cleaning Services. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
