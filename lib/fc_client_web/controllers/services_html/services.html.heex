@@ -1,3 +1,82 @@
-<div class = "border border-black bg-gray-200">
-    <%= live_render(@conn, FcClientWeb.ServicesLive) %>
-</div>
+ <!-- Header -->
+  <header class="bg-primary-500 text-white text-center py-8">
+    <h1 class="text-4xl font-bold">Our Cleaning Services</h1>
+    <p class="text-lg mt-2">Choose the perfect level of cleaning for your needs</p>
+  </header>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 py-10">
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Standard Cleaning -->
+      <div class="bg-white shadow-md rounded-lg p-6">
+        <h2 class="text-2xl font-bold text-primary-500 mb-4">Standard Cleaning</h2>
+        <p class="text-gray-600 mb-4">Perfect for routine maintenance and keeping your space fresh.</p>
+        <ul class="space-y-2 text-gray-600">
+          <li>✔ Dusting surfaces</li>
+          <li>✔ Vacuuming carpets and rugs</li>
+          <li>✔ Sweeping and mopping floors</li>
+          <li>✔ Cleaning bathrooms (sink, toilet, shower)</li>
+          <li>✔ Wiping kitchen counters and appliances</li>
+        </ul>
+      </div>
+
+      <!-- Deep Cleaning -->
+      <div class="bg-white shadow-md rounded-lg p-6">
+        <h2 class="text-2xl font-bold text-primary-500 mb-4">Deep Cleaning</h2>
+        <p class="text-gray-600 mb-4">A thorough top-to-bottom clean for a fresh start.</p>
+        <ul class="space-y-2 text-gray-600">
+          <li>✔ Includes all Standard Cleaning tasks</li>
+          <li>✔ Cleaning baseboards and light fixtures</li>
+          <li>✔ Scrubbing grout and tile</li>
+          <li>✔ Deep cleaning kitchen appliances (inside and out)</li>
+          <li>✔ Washing windows (interior)</li>
+        </ul>
+      </div>
+
+      <!-- Move-In/Move-Out Cleaning -->
+      <div class="bg-white shadow-md rounded-lg p-6">
+        <h2 class="text-2xl font-bold text-primary-500 mb-4">Move-In/Move-Out Cleaning</h2>
+        <p class="text-gray-600 mb-4">Make your move stress-free with a spotless space.</p>
+        <ul class="space-y-2 text-gray-600">
+          <li>✔ Includes all Deep Cleaning tasks</li>
+          <li>✔ Cleaning inside cabinets and drawers</li>
+          <li>✔ Wiping walls and door frames</li>
+          <li>✔ Cleaning vents and ceiling fans</li>
+          <li>✔ Ensuring the space is ready for the next occupant</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Commercial Cleaning -->
+    <section class="bg-primary-50 shadow-md rounded-lg p-8 mt-12">
+      <h2 class="text-3xl font-bold text-primary-500 mb-4">Commercial Cleaning Services</h2>
+      <p class="text-lg text-gray-600">
+        Whether you run an office, retail space, or industrial facility, our team is equipped to provide professional cleaning solutions tailored to your business. We understand that every industry has unique needs, and we’re here to help you maintain a clean and productive environment.
+      </p>
+      <p class="text-lg text-gray-600 mt-4">
+        Contact us today for a customized cleaning plan and quote that fits your business requirements. Let us create a solution that works for you and your team.
+      </p>
+      <a href="/contact" class="inline-block mt-6 bg-primary-500 text-white px-6 py-3 rounded-lg font-bold hover:bg-primary-600">
+        Request a Quote
+      </a>
+    </section>
+  </main>
+
+  <!-- Call to Action -->
+  <section class="bg-primary-500 text-white py-8 text-center">
+    <h2 class="text-3xl font-semibold">Ready for a cleaner space?</h2>
+    <p class="text-lg mt-2">Book your cleaning service today and enjoy a spotless home or office.</p>
+    <a href="/contact" class="inline-block mt-4 bg-white text-primary-500 px-6 py-3 rounded-lg font-bold hover:bg-primary-100">
+      Get Started
+    </a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-primary-800 text-white text-center py-4">
+    <p>&copy; <span id="year"></span> Felicia's Cleaning Services. All rights reserved.</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
